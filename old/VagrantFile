@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# ubuntu-16.04-amd64-20171219-141500-8dc7a2e.box to be replaced with actual name
+# ubuntu-16.04-amd64-20170301-104647-709c610.box to be replaced with actual name
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -14,10 +14,10 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu-16.04-amd64-20171219-141500-8dc7a2e"
-  config.vm.box_download_checksum = "10be51dcdfb97b8a777a669b832f1c63f62aab85486ac5ce489ad32a258ee523"
+  config.vm.box = "ubuntu-16.04-amd64-20170301-104647-709c610"
+  config.vm.box_download_checksum = "90afccb70fddbd0a45df4765d7915baf71973312e6c61527651d8f641ed3fc8f"
   config.vm.box_download_checksum_type = "sha256"
-  config.vm.box_url = "http://d10ofk0qhbh8u9.cloudfront.net/vagrant/20171219-141500-8dc7a2e/ubuntu-16.04-amd64-20171219-141500-8dc7a2e.box"
+  config.vm.box_url = "http://d10ofk0qhbh8u9.cloudfront.net/vagrant/20170301-104647-709c610/ubuntu-16.04-amd64-20170301-104647-709c610.box"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -32,8 +32,6 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "forwarded_port", guest: 5000, host: 5000
   config.vm.network "forwarded_port", guest: 5432, host: 5432
-
-  
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -55,14 +53,11 @@ Vagrant.configure(2) do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    # Support symlinks in windows
-    vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
-    
     # Display the VirtualBox GUI when booting the machine
     # vb.gui = true
 
     # Customize the amount of memory on the VM:
-    vb.memory = "2048"
+    vb.memory = "1024"
 
     # make sure that network cable is plugged in
     vb.customize ["modifyvm", :id, "--cableconnected1", "on"]
